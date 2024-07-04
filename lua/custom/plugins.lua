@@ -1,6 +1,9 @@
 local plugins = {
-  { 
-    "akinsho/toggleterm.nvim", 
+  {
+    "nvim-telescope/telescope.nvim", tag = "0.1.8"
+  },
+  {
+    "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
         config = function()
           require("toggleterm").setup{
@@ -27,7 +30,7 @@ local plugins = {
             },
           }
         end
-  }, 
+  },
   {
     "danielfalk/smart-open.nvim",
     branch = "0.2.x",
