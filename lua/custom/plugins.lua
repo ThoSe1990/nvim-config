@@ -1,5 +1,8 @@
 local plugins = {
   {
+    "terrortylor/nvim-comment"
+  },
+  {
     "nvim-telescope/telescope.nvim", tag = "0.1.8"
   },
   {
