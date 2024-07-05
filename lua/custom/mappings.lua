@@ -31,9 +31,5 @@ M.dap = {
     ["<leader>t"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
 
   },
-  v = {
-    -- Toggle line comment in visual mode
-    ["<Leader>/"] = { "<cmd>lua require('nvim_comment').comment_toggle()<CR>", "Toggle line comment" },
-  },
 }
 return M
