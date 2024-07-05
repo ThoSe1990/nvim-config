@@ -1,5 +1,8 @@
 local plugins = {
   {
+    "tpope/vim-fugitive",
+  },
+  {
     "terrortylor/nvim-comment"
   },
   {

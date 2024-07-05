@@ -21,11 +21,16 @@ M.dap = {
     ["<leader>dr"] = { "<cmd> DapContinue <CR>", "Start or continue the debugger" },
 
     -- buffer control
-    ["<leader>h"] = { "<cmd> bp <CR>", "Previous buffer" },
-    ["<leader>k"] = { "<cmd> bn <CR>", "Next buffer" },
-    ["<Leader>q"] = { "<cmd>bd<CR>", "Close buffer" },
-    ["<Leader>Q"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
-    ["<Leader>s"] = { "<cmd>w<CR>", "Save file" },
+    ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
+    ["<leader>bk"] = { "<cmd> bn <CR>", "Next buffer" },
+    ["<Leader>bd"] = { "<cmd> bd <CR>", "Close buffer" },
+    ["<Leader>bD"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
+    ["<Leader>bs"] = { "<cmd>w<CR>", "Save file" },
+    ["<Leader>fs"] = { "<cmd>w<CR>", "Save file" },
+
+    ["<leader>q"] = { "<cmd> q <CR>", "Quit"},
+    ["<leader>Q"] = { "<cmd> q! <CR>", "Force quit"},
+
 
     -- terminal 
     ["<leader>t"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
