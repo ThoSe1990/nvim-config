@@ -9,8 +9,8 @@ M.dap = {
     -- resizing split 
     ["<C-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
     ["<C-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
-    ["<C-Left>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
-    ["<C-Right>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
+    ["<C-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
+    ["<C-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
 
     -- create split 
     ["<Leader>sh"] = { "<cmd>split<CR><C-w><C-w><cmd>bnext<CR>", "Horizontal split and move buffer, next buffer" },
