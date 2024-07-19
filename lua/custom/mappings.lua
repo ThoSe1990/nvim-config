@@ -3,8 +3,8 @@ M.dap = {
   plugin = true,
   n = {
     -- bindings to scroll 
-    ["<C-j>"] = { "<C-e>", ""},
-    ["<C-k>"] = { "<C-y>", ""},
+    ["<C-j>"] = { "3<C-e>", ""},
+    ["<C-k>"] = { "3<C-y>", ""},
 
     -- resizing split 
     -- ["<C-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
@@ -23,7 +23,7 @@ M.dap = {
     ["<leader>bk"] = { "<cmd> bn <CR>", "Next buffer" },
     ["<Leader>bd"] = { "<cmd> bd <CR>", "Close buffer" },
     ["<Leader>bD"] = { "<cmd> bd! <CR>", "Close buffer" },
-    ["<Leader>bq"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
+    ["<Leader>ba"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
     ["<Leader>bh"] = { "<cmd>split<CR><C-w><C-w><cmd>bnext<CR>", "Horizontal split and move buffer, next buffer" },
     ["<Leader>bv"] = { "<cmd>vsplit<CR><C-w><C-w><cmd>bnext<CR>", "Vertical split and move buffer, next buffer" },
     ["<Leader>s"] = { "<cmd>w<CR>", "Save file" },
