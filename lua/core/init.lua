@@ -9,6 +9,12 @@ g.toggle_theme_icon = "   "
 g.transparency = config.ui.transparency
 
 -------------------------------------- options ------------------------------------------
+
+opt.foldlevel = 99
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- Define a function to show help for fold commands
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
