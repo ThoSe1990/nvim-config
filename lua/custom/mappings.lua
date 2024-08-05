@@ -31,10 +31,12 @@ M.dap = {
     ["<leader>q"] = { "<cmd> q <CR>", "Quit"},
     ["<leader>Q"] = { "<cmd> q! <CR>", "Force quit"},
 
-
     -- terminal 
     ["<leader>t"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
 
+
+    -- git 
+    ["<leader>gt"] = { "<cmd>DiffviewOpen<CR>", "Open git diffs (current changes)"},
   },
 }
 return M

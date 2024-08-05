@@ -1,5 +1,11 @@
 local plugins = {
   {
+    "sindrets/diffview.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    lazy = false,
+    enabled = true,
+  },
+  {
     "tpope/vim-fugitive",
   },
   {
