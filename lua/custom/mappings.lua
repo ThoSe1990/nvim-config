@@ -12,8 +12,6 @@ M.dap = {
     ["<C-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
     ["<C-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
 
-    -- create split 
-
     -- debugger 
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add breakpoint at line" },
     ["<leader>dr"] = { "<cmd> DapContinue <CR>", "Start or continue the debugger" },
