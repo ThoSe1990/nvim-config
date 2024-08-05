@@ -36,7 +36,7 @@ M.dap = {
 
 
     -- git 
-    ["<leader>gt"] = { "<cmd>DiffviewOpen<CR>", "Open git diffs (current changes)"},
+    ["<leader>gc"] = { "<cmd>DiffviewOpen<CR>", "Open changes/git diffs"},
   },
 }
 return M
