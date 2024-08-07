@@ -22,10 +22,10 @@ M.dap = {
     ["<Leader>bd"] = { "<cmd> bd <CR>", "Close buffer" },
     ["<Leader>bD"] = { "<cmd> bd! <CR>", "Close buffer" },
     ["<Leader>ba"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
+    ["<leader>bo"] = { "<cmd>%bd|e#<CR>", "Close buffers but the current one" },
     ["<Leader>bh"] = { "<cmd>split<CR><C-w><C-w><cmd>bnext<CR>", "Horizontal split and move buffer, next buffer" },
     ["<Leader>bv"] = { "<cmd>vsplit<CR><C-w><C-w><cmd>bnext<CR>", "Vertical split and move buffer, next buffer" },
     ["<Leader>s"] = { "<cmd>w<CR>", "Save file" },
-
     ["<leader>q"] = { "<cmd> q <CR>", "Quit"},
     ["<leader>Q"] = { "<cmd> q! <CR>", "Force quit"},
 
