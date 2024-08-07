@@ -15,6 +15,14 @@ local plugins = {
     "nvim-telescope/telescope.nvim", tag = "0.1.8"
   },
   {
+    "rbong/vim-flog",
+    lazy = true,
+    cmd = { "Flog", "Flogsplit", "Floggit" },
+    dependencies = {
+      "tpope/vim-fugitive",
+    },
+  },
+  {
     "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
         config = function()

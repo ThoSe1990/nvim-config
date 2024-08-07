@@ -35,6 +35,8 @@ M.dap = {
 
     -- git 
     ["<leader>gc"] = { "<cmd>DiffviewOpen<CR>", "Open changes/git diffs"},
+    ["<leader>gg"] = { "<cmd>Flog<CR>", "Open git graph"},
+    ["<leader>gs"] = { "<cmd>Flogsplit<CR>", "Open git graph (split)"},
   },
 }
 return M
