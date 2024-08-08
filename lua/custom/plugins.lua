@@ -12,6 +12,10 @@ local plugins = {
     "terrortylor/nvim-comment"
   },
   {
+    -- install ripgrep: 
+    -- https://github.com/BurntSushi/ripgrep#installation
+    -- brew install ripgrep
+    -- sudo apt-get install ripgrep
     "nvim-telescope/telescope.nvim", tag = "0.1.8"
   },
   {
