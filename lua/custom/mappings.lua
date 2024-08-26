@@ -7,14 +7,24 @@ M.dap = {
     ["<C-k>"] = { "3<C-y>", ""},
 
     -- resizing split 
-    -- ["<C-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
-    -- ["<C-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
+    ["<C-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
+    ["<C-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
     ["<C-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
     ["<C-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
 
     -- debugger 
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add breakpoint at line" },
     ["<leader>dr"] = { "<cmd> DapContinue <CR>", "Start or continue the debugger" },
+
+    -- git
+    ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>ghr"] = { "<cmd> Gitsigns reset_hunk <CR>", "Reset hunk"},
+    ["<leader>ghs"] = { "<cmd> Gitsigns stage_hunk <CR>", "Stage hunk"},
+    ["<leader>ghu"] = { "<cmd> Gitsigns undo_stage_hunk <CR>", "Undo stage hunk"},
+    ["<leader>gbs"] = { "<cmd> Gitsigns stage_buffer<CR>", "Stage buffer"},
+    ["<leader>gbr"] = { "<cmd> Gitsigns reset_buffer<CR>", "Reset buffer"},
+    ["<leader>gd"] = { "<cmd> Gitsigns diffthis<CR>", "Show diffs"},
+    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Toggle review"},
 
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
