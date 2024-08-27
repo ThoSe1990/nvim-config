@@ -24,7 +24,7 @@ M.dap = {
     ["<leader>gbs"] = { "<cmd> Gitsigns stage_buffer<CR>", "Stage buffer"},
     ["<leader>gbr"] = { "<cmd> Gitsigns reset_buffer<CR>", "Reset buffer"},
     ["<leader>gd"] = { "<cmd> Gitsigns diffthis<CR>", "Show diffs"},
-    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Toggle review"},
+    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Preview hunk"},
 
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
