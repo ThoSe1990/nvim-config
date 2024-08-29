@@ -30,6 +30,7 @@ M.dap = {
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
     ["<leader>bk"] = { "<cmd> bn <CR>", "Next buffer" },
     ["<Leader>bd"] = { "<cmd> bd <CR>", "Close buffer" },
+    ["<Leader>bf"] = { "<cmd> bp | bd # <CR>", "Close buffer and maintain layout" },
     ["<Leader>bD"] = { "<cmd> bd! <CR>", "Close buffer" },
     ["<Leader>ba"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
     ["<leader>bo"] = { "<cmd>%bd|e#<CR>", "Close buffers but the current one" },

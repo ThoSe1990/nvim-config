@@ -1,5 +1,6 @@
 -- lua language server: brew install lua-language-server
-
+-- editorconfig: brew install editorconfig 
+-- riggrep for find strings in all files: brew install ripgrep
 
 local plugins = {
   {
@@ -186,5 +187,8 @@ local plugins = {
       }
     end
   },
+  {
+    "gpanders/editorconfig.nvim"
+  }
 }
 return plugins

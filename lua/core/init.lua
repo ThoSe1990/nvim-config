@@ -11,7 +11,7 @@ g.transparency = config.ui.transparency
 -------------------------------------- options ------------------------------------------
 
 opt.foldlevel = 99
-opt.foldmethod = "expr"
+opt.foldmethod = "syntax"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Define a function to show help for fold commands
