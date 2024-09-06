@@ -11,3 +11,10 @@ lspconfig.clangd.setup {
   end,
   capabilities = capabilities
 }
+
+lspconfig.ts_ls.setup{
+  on_attach = on_attach,  -- If you have custom on_attach function
+  capabilities = capabilities,  -- Your LSP capabilities (e.g., nvim-cmp)
+  filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  cmd = { "typescript-language-server", "--stdio" },
+}

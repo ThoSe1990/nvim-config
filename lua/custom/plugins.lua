@@ -132,6 +132,7 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        "ts_ls",
       }
     }
   },
