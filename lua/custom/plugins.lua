@@ -1,5 +1,6 @@
 -- lua language server: brew install lua-language-server
 -- typescript language server: npm install -g typescript
+--                             npm install -g typescript-language-server typescript
 -- editorconfig: brew install editorconfig 
 -- riggrep for find strings in all files: brew install ripgrep
 
