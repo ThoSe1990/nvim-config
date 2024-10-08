@@ -6,6 +6,44 @@
 
 local plugins = {
   {
+    'shellRaining/hlchunk.nvim',
+    lazy = false,
+    config = function()
+      require('hlchunk').setup({
+        chunk = {
+          enable = true,
+          use_treesitter = false, -- enables treesitter integration
+          duration = 0,
+          delay = 0,
+          style = {
+            { fg = "#6082B6" },
+            { fg = "#c21f30" },
+          },
+          chars = {
+              horizontal_line = "─",
+              vertical_line = "│",
+              left_top = "╭",
+              left_bottom = "╰",
+              right_arrow = "─",
+          },
+        },
+        indent = {
+          enable = false, -- disables indent highlighting
+        },
+        line_num = {
+          enable = true, -- disables line number highlighting
+          style = {
+            { fg = "#6082B6" },
+            { fg = "#c21f30" },
+          },
+        },
+        blank = {
+          enable = false, -- disables blank line highlighting
+        },
+      })
+    end
+  },
+  {
     "sindrets/diffview.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     lazy = false,
@@ -192,6 +230,6 @@ local plugins = {
   },
   {
     "gpanders/editorconfig.nvim"
-  }
+  },
 }
 return plugins

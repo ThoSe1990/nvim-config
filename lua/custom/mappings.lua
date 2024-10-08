@@ -29,6 +29,8 @@ M.dap = {
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
     ["<leader>bk"] = { "<cmd> bn <CR>", "Next buffer" },
+    ["<leader>bm"] = { "<cmd> :enew <CR>", "New buffer" },
+    ["<leader>bn"] = { "<cmd> :vnew <CR>", "New buffer (vertical)" },
     ["<Leader>bd"] = { "<cmd> bd <CR>", "Close buffer" },
     ["<Leader>bf"] = { "<cmd> bp | bd # <CR>", "Close buffer and maintain layout" },
     ["<Leader>bD"] = { "<cmd> bd! <CR>", "Close buffer" },
