@@ -30,6 +30,8 @@ M.dap = {
 
     -- tabs
     ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
+    ["<leader>tn"] = { "<cmd> tabnext <CR>", "Next tab" },
+    ["<leader>tp"] = { "<cmd> tabprev <CR>", "Prev tab" },
 
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
