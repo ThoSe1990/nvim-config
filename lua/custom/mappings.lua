@@ -23,8 +23,13 @@ M.dap = {
     ["<leader>ghu"] = { "<cmd> Gitsigns undo_stage_hunk <CR>", "Undo stage hunk"},
     ["<leader>gbs"] = { "<cmd> Gitsigns stage_buffer<CR>", "Stage buffer"},
     ["<leader>gbr"] = { "<cmd> Gitsigns reset_buffer<CR>", "Reset buffer"},
-    ["<leader>gd"] = { "<cmd> Gitsigns diffthis<CR>", "Show diffs"},
-    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk<CR>", "Preview hunk"},
+
+    --git diffs 
+    ["<leader>do"] = { "<cmd> DiffviewOpen <CR>", "Diffview open current changes" },
+    ["<leader>dh"] = { "<cmd> DiffviewOpen HEAD <CR>", "Diffview open head" },
+
+    -- tabs
+    ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
 
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
