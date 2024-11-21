@@ -21,6 +21,7 @@ M.dap = {
     ["<leader>ghr"] = { "<cmd> Gitsigns reset_hunk <CR>", "Reset hunk"},
     ["<leader>ghs"] = { "<cmd> Gitsigns stage_hunk <CR>", "Stage hunk"},
     ["<leader>ghu"] = { "<cmd> Gitsigns undo_stage_hunk <CR>", "Undo stage hunk"},
+    ["<leader>ghp"] = { "<cmd> Gitsigns preview_hunk <CR>", "Stage hunk"},
     ["<leader>gbs"] = { "<cmd> Gitsigns stage_buffer<CR>", "Stage buffer"},
     ["<leader>gbr"] = { "<cmd> Gitsigns reset_buffer<CR>", "Reset buffer"},
 
