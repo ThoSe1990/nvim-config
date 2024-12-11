@@ -27,7 +27,8 @@ M.dap = {
 
     --git diffs 
     ["<leader>do"] = { "<cmd> DiffviewOpen <CR>", "Diffview open current changes" },
-    ["<leader>dh"] = { "<cmd> DiffviewOpen HEAD <CR>", "Diffview open head" },
+    ["<leader>dm"] = { "<cmd> DiffviewOpen origin/master...HEAD <CR>", "Diffview open master" },
+    ["<leader>dn"] = { "<cmd> DiffviewOpen origin/main...HEAD <CR>", "Diffview open main" },
 
     -- tabs
     ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
