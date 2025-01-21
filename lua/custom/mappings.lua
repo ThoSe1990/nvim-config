@@ -21,14 +21,14 @@ M.dap = {
     ["<leader>ghr"] = { "<cmd> Gitsigns reset_hunk <CR>", "Reset hunk"},
     ["<leader>ghs"] = { "<cmd> Gitsigns stage_hunk <CR>", "Stage hunk"},
     ["<leader>ghu"] = { "<cmd> Gitsigns undo_stage_hunk <CR>", "Undo stage hunk"},
-    ["<leader>ghp"] = { "<cmd> Gitsigns preview_hunk <CR>", "Stage hunk"},
+    ["<leader>ghp"] = { "<cmd> Gitsigns preview_hunk <CR>", "Preview hunk"},
     ["<leader>gbs"] = { "<cmd> Gitsigns stage_buffer<CR>", "Stage buffer"},
     ["<leader>gbr"] = { "<cmd> Gitsigns reset_buffer<CR>", "Reset buffer"},
 
     --git diffs 
-    ["<leader>do"] = { "<cmd> DiffviewOpen <CR>", "Diffview open current changes" },
-    ["<leader>dm"] = { "<cmd> DiffviewOpen origin/master...HEAD <CR>", "Diffview open master" },
-    ["<leader>dn"] = { "<cmd> DiffviewOpen origin/main...HEAD <CR>", "Diffview open main" },
+    ["<leader>gdc"] = { "<cmd> DiffviewOpen <CR>", "Diffview open current changes" },
+    ["<leader>gdm"] = { "<cmd> DiffviewOpen origin/master...HEAD <CR>", "Diffview open master" },
+    ["<leader>gdn"] = { "<cmd> DiffviewOpen origin/main...HEAD <CR>", "Diffview open main" },
 
     -- tabs
     ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
