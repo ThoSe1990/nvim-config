@@ -158,7 +158,7 @@ M.lspconfig = {
       "LSP implementation",
     },
 
-    ["<leader>ls"] = {
+    ["<leader>Ls"] = {
       function()
         vim.lsp.buf.signature_help()
       end,
@@ -193,7 +193,7 @@ M.lspconfig = {
       "LSP references",
     },
 
-    ["<leader>lf"] = {
+    ["<leader>Lf"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
       end,
@@ -214,7 +214,7 @@ M.lspconfig = {
       "Goto next",
     },
 
-    ["<leader>ll"] = {
+    ["<leader>Ll"] = {
       function()
         vim.diagnostic.setloclist()
       end,
