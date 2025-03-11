@@ -2,6 +2,11 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
+    -- cursor movement 
+    ["<leader>l"] = { "<cmd> $ <CR>", "Move cursor to the end of a line" },
+    ["<leader>h"] = { "<cmd> $ <CR>", "Move cursor to the beginning of a line" },
+    ["<leader>H"] = { "<cmd> $ <CR>", "Move cursor to the very beginning of a line" },
+
     -- bindings to scroll 
     ["<C-j>"] = { "3<C-e>", ""},
     ["<C-k>"] = { "3<C-y>", ""},
