@@ -18,3 +18,9 @@ lspconfig.ts_ls.setup{
   filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   cmd = { "typescript-language-server", "--stdio" },
 }
+
+-- Python
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}

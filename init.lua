@@ -22,11 +22,11 @@ require "plugins"
 
 
 -- clang-format auto formatting before document safe
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.cpp", "*.hpp", "*.c", "*.h" },
-  callback = function()
-    local pos = vim.api.nvim_win_get_cursor(0) -- save cursor position
-    vim.cmd("silent! %!clang-format")
-    pcall(vim.api.nvim_win_set_cursor, 0, pos) -- restore cursor position
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = { "*.cpp", "*.hpp", "*.c", "*.h" },
+--   callback = function()
+--     local pos = vim.api.nvim_win_get_cursor(0) -- save cursor position
+--     vim.cmd("silent! %!clang-format")
+--     pcall(vim.api.nvim_win_set_cursor, 0, pos) -- restore cursor position
+--   end,
+-- })

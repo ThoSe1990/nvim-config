@@ -1,10 +1,46 @@
 -- lua language server: brew install lua-language-server
 -- typescript language server: npm install -g typescript
 --                             npm install -g typescript-language-server typescript
+-- python langugae server: npm install -g pyright
 -- editorconfig: brew install editorconfig 
 -- riggrep for find strings in all files: brew install ripgrep
 
 local plugins = {
+  {
+    "nvimtools/none-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local null_ls = require("null-ls")
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.clang_format.with({
+            filetypes = { "c", "cpp", "h" },
+          }),
+        },
+        on_attach = function(client, bufnr)
+          print("null-ls attached to buffer: " .. bufnr) -- Debug
+
+          if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({
+                  bufnr = bufnr,
+                  filter = function(c)
+                    return c.name == "null-ls"
+                  end,
+                })
+              end,
+            })
+          end
+        end,
+      })
+    end,
+  },
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
@@ -12,6 +48,12 @@ local plugins = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
     },
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "op read op://Employee/OpenAI/credential --no-newline",
+        predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/ThoSe1990/awesome-chatgpt-prompts/refs/heads/main/prompts.csv"
+      })
+    end,
   },
   {
     "sindrets/diffview.nvim",
