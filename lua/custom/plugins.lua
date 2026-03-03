@@ -42,20 +42,6 @@ local plugins = {
     end,
   },
   {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "op read op://Employee/OpenAI/credential --no-newline",
-        predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/ThoSe1990/awesome-chatgpt-prompts/refs/heads/main/prompts.csv"
-      })
-    end,
-  },
-  {
     "sindrets/diffview.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     lazy = false,

@@ -29,18 +29,25 @@ local default_plugins = {
     end,
   },
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    event = "User FilePost",
-    config = function(_, opts)
-      require("colorizer").setup(opts)
+{
+  "NvChad/nvim-colorizer.lua",
+  event = "User FilePost",
 
-      -- execute colorizer as soon as possible
-      vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
-      end, 0)
-    end,
+  opts = {
+    user_default_options = {
+      suppress_deprecation = true,
+    },
   },
+
+  config = function(_, opts)
+    require("colorizer").setup(opts)
+
+    -- execute colorizer as soon as possible
+    vim.defer_fn(function()
+      require("colorizer").attach_to_buffer(0)
+    end, 0)
+  end,
+},
 
   {
     "nvim-tree/nvim-web-devicons",
@@ -67,19 +74,20 @@ local default_plugins = {
     end,
   },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile" },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    build = ":TSUpdate",
-    opts = function()
+{
+  "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  version = "v0.9.3",
+  build = ":TSUpdate",
+  opts = function()
       return require "plugins.configs.treesitter"
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       require("nvim-treesitter.configs").setup(opts)
-    end,
-  },
+  end,
+},
 
   -- git stuff
   {
