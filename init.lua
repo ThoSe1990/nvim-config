@@ -30,3 +30,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pcall(vim.api.nvim_win_set_cursor, 0, pos) -- restore cursor position
   end,
 })
+
+-- explicit clipboard copy / paste for docker use 
+vim.g.clipboard = {
+  name = "osc52",
+  copy = {
+    ["+"] = require('vim.ui.clipboard.osc52').copy("+"),
+    ["*"] = require('vim.ui.clipboard.osc52').copy("*"),
+  },
+  paste = {
+    ["+"] = function() return {vim.fn.getreg("+")}, {} end,
+    ["*"] = function() return {vim.fn.getreg("*")}, {} end,
+  },
+}
