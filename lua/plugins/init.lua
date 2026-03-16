@@ -74,20 +74,26 @@ local default_plugins = {
     end,
   },
 
-{
-  "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPost", "BufNewFile" },
-  cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-  version = "v0.9.3",
-  build = ":TSUpdate",
-  opts = function()
-      return require "plugins.configs.treesitter"
+  {
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    version = "v0.9.3",
+    build = ":TSUpdate",
+    opts = function()
+      local opts = require "plugins.configs.treesitter"
+      local languages = { "c", "cpp", "cmake", "python", "typescript", "tsx" }
+      for _, lang in ipairs(languages) do
+        table.insert(opts.ensure_installed, lang)
+      end
+
+      return opts
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
       require("nvim-treesitter.configs").setup(opts)
-  end,
-},
+    end,
+  },
 
   -- git stuff
   {
