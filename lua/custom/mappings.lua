@@ -16,10 +16,10 @@ M.dap = {
     ["<C-k>"] = { "3<C-y>", ""},
 
     -- resizing split 
-    ["<C-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
-    ["<C-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
-    ["<C-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
-    ["<C-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
+    ["<C-S-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
+    ["<C-S-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
+    ["<C-S-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
+    ["<C-S-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
 
     -- debugger 
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add breakpoint at line" },
