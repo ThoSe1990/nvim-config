@@ -52,18 +52,9 @@ M.dap = {
 
     -- tabs
     ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
-    ["<leader>tn"] = { "<cmd> tabnext <CR>", "Next tab" },
-    ["<leader>tp"] = { "<cmd> tabprev <CR>", "Prev tab" },
-    ["<leader>to"] = { "<cmd> tabnew <CR>", "Open new tab" },
-    ["<leader>t1"] = { "<cmd> 1gt <CR>", "Go to tab 1" },
-    ["<leader>t2"] = { "<cmd> 2gt <CR>", "Go to tab 2" },
-    ["<leader>t3"] = { "<cmd> 3gt <CR>", "Go to tab 3" },
-    ["<leader>t4"] = { "<cmd> 4gt <CR>", "Go to tab 4" },
-    ["<leader>t5"] = { "<cmd> 5gt <CR>", "Go to tab 5" },
-    ["<leader>t6"] = { "<cmd> 6gt <CR>", "Go to tab 6" },
-    ["<leader>t7"] = { "<cmd> 7gt <CR>", "Go to tab 7" },
-    ["<leader>t8"] = { "<cmd> 8gt <CR>", "Go to tab 8" },
-    ["<leader>t9"] = { "<cmd> 9gt <CR>", "Go to tab 9" },
+    ["<leader>tl"] = { "<cmd> tabnext <CR>", "Next tab" },
+    ["<leader>th"] = { "<cmd> tabprev <CR>", "Prev tab" },
+    ["<leader>tn"] = { "<cmd> tabnew <CR>", "Open new tab" },
 
     -- buffer control
     ["<leader>bh"] = { "<cmd> bp <CR>", "Previous buffer" },
