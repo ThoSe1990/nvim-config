@@ -11,7 +11,7 @@ local plugins = {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local null_ls = require("null-ls")
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
       null_ls.setup({
         sources = {
@@ -20,8 +20,6 @@ local plugins = {
           }),
         },
         on_attach = function(client, bufnr)
-          print("null-ls attached to buffer: " .. bufnr) -- Debug
-
           if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             vim.api.nvim_create_autocmd("BufWritePre", {
@@ -43,7 +41,7 @@ local plugins = {
   },
   {
     "sindrets/diffview.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
     enabled = true,
   },
@@ -58,7 +56,7 @@ local plugins = {
     -- https://github.com/BurntSushi/ripgrep#installation
     -- brew install ripgrep
     -- sudo apt-get install ripgrep
-    "nvim-telescope/telescope.nvim", tag = "0.1.8"
+    "nvim-telescope/telescope.nvim"
   },
   {
     "rbong/vim-flog",
@@ -85,7 +83,7 @@ local plugins = {
             persist_size = true,
             direction = 'horizontal',
             close_on_exit = true,
-            shell = vim.shell,
+            shell = vim.o.shell,
             float_opts = {
               border = 'curved',
               winblend = 3,
@@ -103,7 +101,7 @@ local plugins = {
     config = function()
       require("telescope").load_extension("smart_open")
     end,
-    requires = {
+    dependencies = {
       {"kkharji/sqlite.lua"},
     }
   },
@@ -146,15 +144,8 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require("custom.configs.dap")
+      pcall(require, "custom.configs.dap")
       require("core.utils").load_mappings("dap")
-    end
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return require "custom.configs.null-ls"
     end
   },
   {
@@ -171,13 +162,13 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
-        "ts_ls",
+        "typescript-language-server",
       }
     }
   },
   {
     "folke/todo-comments.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
     enabled = true,
     config = function()

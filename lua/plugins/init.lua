@@ -78,7 +78,6 @@ local default_plugins = {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    version = "v0.9.3",
     build = ":TSUpdate",
     opts = function()
       local opts = require "plugins.configs.treesitter"
@@ -91,7 +90,16 @@ local default_plugins = {
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
-      require("nvim-treesitter.configs").setup(opts)
+      local ok_new, ts = pcall(require, "nvim-treesitter")
+      if ok_new and type(ts.setup) == "function" then
+        ts.setup(opts)
+        return
+      end
+
+      local ok_old, ts_configs = pcall(require, "nvim-treesitter.configs")
+      if ok_old then
+        ts_configs.setup(opts)
+      end
     end,
   },
 
