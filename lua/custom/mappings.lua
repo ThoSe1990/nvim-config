@@ -23,6 +23,7 @@ M.dap = {
 
     -- debugging
     ["<F5>"] = { function() require("dap").continue() end, "Start/Continue debugging" },
+    ["<leader>ds>"] = { function() require("dap").continue() end, "Start/Continue debugging" },
     ["<F10>"] = { function() require("dap").step_over() end, "Step over" },
     ["<F11>"] = { function() require("dap").step_into() end, "Step into" },
     ["<F12>"] = { function() require("dap").step_out() end, "Step out" },
