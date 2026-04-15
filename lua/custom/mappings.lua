@@ -21,6 +21,24 @@ M.dap = {
     ["<C-S-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
     ["<C-S-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
 
+    -- debugging
+    ["<F5>"] = { function() require("dap").continue() end, "Start/Continue debugging" },
+    ["<F10>"] = { function() require("dap").step_over() end, "Step over" },
+    ["<F11>"] = { function() require("dap").step_into() end, "Step into" },
+    ["<F12>"] = { function() require("dap").step_out() end, "Step out" },
+
+    ["<leader>db"] = { function() require("dap").toggle_breakpoint() end, "Toggle breakpoint" },
+    ["<leader>dB"] = {
+      function()
+        require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+      end,
+      "Conditional breakpoint",
+    },
+
+    ["<leader>du"] = { function() require("dapui").toggle() end, "Toggle DAP UI" },
+    ["<leader>dr"] = { function() require("dap").repl.open() end, "Open DAP REPL" },
+    ["<leader>dl"] = { function() require("dap").run_last() end, "Run last debug session" },
+
     -- git
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
     ["<leader>ghr"] = { "<cmd> Gitsigns reset_hunk <CR>", "Reset hunk"},

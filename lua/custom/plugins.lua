@@ -5,7 +5,22 @@
 -- editorconfig: brew install editorconfig 
 -- riggrep for find strings in all files: brew install ripgrep
 
-local plugins = {
+local plugins = {  
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require("custom.configs.dap")
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap" },
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = true,
+  },
   {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
@@ -120,6 +135,7 @@ local plugins = {
     opts = {
       ensure_installed = {
         "clangd",
+        "cpptools",
         "clang-format",
         "typescript-language-server",
       }
