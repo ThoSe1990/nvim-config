@@ -6,6 +6,7 @@ dap.adapters.cppdbg = {
   command = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
+-- apparently not needed, dap picks everything from launch.json
 -- dap.configurations.cpp = {
 --   {
 --     name = "Debug Machine (minimal)",
