@@ -1,6 +1,6 @@
 local M = {}
 M.dap = {
-  plugin = true,
+  plugin = false,
   v = {
     -- cursor movement 
     ["L"] = { "g_", "Move cursor to the end of a line" },
@@ -20,21 +20,6 @@ M.dap = {
     ["<C-S-Down>"] = { "<cmd> resize -3<CR>", "Horizontal resize -3" },
     ["<C-S-Right>"] = { "<cmd> vertical resize +3<CR>", "Vertical resize +3" },
     ["<C-S-Left>"] = { "<cmd> vertical resize -3<CR>", "Vertical resize -3" },
-
-    -- debugger
-    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle breakpoint" },
-    ["<leader>dB"] = { "<cmd> lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ')) <CR>", "Conditional breakpoint" },
-
-    ["<leader>dc"] = { "<cmd> DapContinue <CR>", "Start/Continue debugger" },
-    ["<leader>di"] = { "<cmd> DapStepInto <CR>", "Step into" },
-    ["<leader>do"] = { "<cmd> DapStepOver <CR>", "Step over" },
-    ["<leader>dO"] = { "<cmd> DapStepOut <CR>", "Step out" },
-
-    ["<leader>dr"] = { "<cmd> lua require'dap'.repl.open() <CR>", "Open debug REPL" },
-    ["<leader>dl"] = { "<cmd> DapRunLast <CR>", "Run last debug session" },
-
-    ["<leader>du"] = { "<cmd> lua require'dapui'.toggle() <CR>", "Toggle debug UI" },
-    ["<leader>dt"] = { "<cmd> DapTerminate <CR>", "Terminate debug session" },
 
     -- git
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
