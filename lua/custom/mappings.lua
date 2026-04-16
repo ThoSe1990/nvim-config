@@ -14,6 +14,8 @@ M.dap = {
     -- bindings to scroll 
     ["<C-j>"] = { "3<C-e>", ""},
     ["<C-k>"] = { "3<C-y>", ""},
+    ["<C-S-j>"] = { "30<C-e>", ""},
+    ["<C-S-k>"] = { "30<C-y>", ""},
 
     -- resizing split 
     ["<C-S-Up>"] = { "<cmd> resize +3<CR>", "Horizontal resize +3" },
