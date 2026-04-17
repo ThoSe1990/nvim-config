@@ -48,7 +48,15 @@ M.dap = {
       function() require("dap").clear_breakpoints() end,
       "Clear all breakpoints",
     },
-
+    ["<leader>dt"] = {
+      function()
+        local dap = require("dap")
+        local dapui = require("dapui")
+        dap.terminate()
+        dapui.close()
+      end,
+      "Terminate debugging",
+    },
     ["<leader>du"] = { function() require("dapui").toggle() end, "Toggle DAP UI" },
     ["<leader>dr"] = { function() require("dap").repl.open() end, "Open DAP REPL" },
     ["<leader>dl"] = { function() require("dap").run_last() end, "Run last debug session" },
