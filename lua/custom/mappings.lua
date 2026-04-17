@@ -23,13 +23,20 @@ M.dap = {
       end,
       "Toggle Oil file explorer",
     },
-  ["<leader>nm"] = {
-    function()
-      vertical_split_next_buffer()
-      vim.cmd("Oil")
-    end,
-    "Split + Oil",
-  },
+    ["<leader>nm"] = {
+      function()
+        vim.cmd("Oil")
+      end,
+      "Open Oil",
+    },
+    ["<leader>nM"] = {
+      function()
+        vertical_split_next_buffer()
+        vim.cmd("Oil")
+      end,
+      "Open Oil + Split",
+    },
+
     -- cursor movement 
     ["L"] = { "g_", "Move cursor to the end of a line" },
     ["H"] = { "^", "Move cursor to the beginning of a line" },

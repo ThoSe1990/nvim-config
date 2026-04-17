@@ -13,6 +13,7 @@ local plugins = {
     config = function()
       require("oil").setup({
         default_file_explorer = true,
+        use_default_keymaps = false,
         view_options = {
           show_hidden = true,
         },
@@ -281,3 +282,5 @@ local plugins = {
   },
 }
 return plugins
+
+
