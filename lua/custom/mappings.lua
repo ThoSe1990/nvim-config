@@ -1,4 +1,12 @@
 local M = {}
+
+local function vertical_split_next_buffer()
+  vim.cmd("vsplit")
+  vim.cmd("wincmd w")
+  vim.cmd("bnext")
+end
+
+
 M.dap = {
   plugin = false,
   v = {
@@ -9,13 +17,19 @@ M.dap = {
   n = {
 
     -- oil / browsing files
-    ["<C-n>"] = {
+    ["<leader>nn"] = {
       function()
         require("oil").toggle_float()
       end,
       "Toggle Oil file explorer",
     },
-
+  ["<leader>nm"] = {
+    function()
+      vertical_split_next_buffer()
+      vim.cmd("Oil")
+    end,
+    "Split + Oil",
+  },
     -- cursor movement 
     ["L"] = { "g_", "Move cursor to the end of a line" },
     ["H"] = { "^", "Move cursor to the beginning of a line" },
@@ -101,7 +115,7 @@ M.dap = {
     ["<Leader>ba"] = { "<cmd>bufdo bd<CR>", "Close all buffers" },
     ["<leader>bo"] = { "<cmd>%bd|e#<CR>", "Close buffers but the current one" },
     ["<Leader>bh"] = { "<cmd>split<CR><C-w><C-w><cmd>bnext<CR>", "Horizontal split and move buffer, next buffer" },
-    ["<Leader>bv"] = { "<cmd>vsplit<CR><C-w><C-w><cmd>bnext<CR>", "Vertical split and move buffer, next buffer" },
+    ["<Leader>bv"] = { vertical_split_next_buffer, "Vertical split and move buffer, next buffer" },
     ["<Leader>s"] = { "<cmd>w<CR>", "Save file" },
     ["<leader>q"] = { "<cmd> q <CR>", "Quit"},
     ["<leader>Q"] = { "<cmd> q! <CR>", "Force quit"},
