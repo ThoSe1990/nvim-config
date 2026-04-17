@@ -44,6 +44,10 @@ M.dap = {
       end,
       "Conditional breakpoint",
     },
+    ["<leader>dC"] = {
+      function() require("dap").clear_breakpoints() end,
+      "Clear all breakpoints",
+    },
 
     ["<leader>du"] = { function() require("dapui").toggle() end, "Toggle DAP UI" },
     ["<leader>dr"] = { function() require("dap").repl.open() end, "Open DAP REPL" },
