@@ -7,6 +7,15 @@ M.dap = {
     ["H"] = { "^", "Move cursor to the beginning of a line" },
   },
   n = {
+
+    -- oil / browsing files
+    ["<C-n>"] = {
+      function()
+        require("oil").toggle_float()
+      end,
+      "Toggle Oil file explorer",
+    },
+
     -- cursor movement 
     ["L"] = { "g_", "Move cursor to the end of a line" },
     ["H"] = { "^", "Move cursor to the beginning of a line" },
