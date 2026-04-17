@@ -1,7 +1,8 @@
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
-    vim.opt.foldmethod = "indent"
-    vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-    vim.opt.foldlevel = 99
+    local ok = pcall(vim.treesitter.get_parser, 0)
+    vim.opt_local.foldmethod = "indent"
+    vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.opt_local.foldlevel = 99
   end,
 })
