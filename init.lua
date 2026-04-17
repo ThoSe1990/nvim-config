@@ -25,9 +25,25 @@ require "plugins"
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.cpp", "*.hpp", "*.c", "*.cc", "*.h" },
   callback = function()
-    local pos = vim.api.nvim_win_get_cursor(0) -- save cursor position
-    vim.cmd("silent! %!clang-format")
-    pcall(vim.api.nvim_win_set_cursor, 0, pos) -- restore cursor position
+    -- save cursor position
+    local pos = vim.api.nvim_win_get_cursor(0)
+
+    -- only format if clangd is attached
+    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+    for _, client in ipairs(clients) do
+      if client.name == "clangd" then
+        vim.lsp.buf.format({
+          async = false,
+          filter = function(c)
+            return c.name == "clangd"
+          end,
+        })
+        break
+      end
+    end
+
+    -- restore cursor position (usually unnecessary, but keeps your behavior)
+    pcall(vim.api.nvim_win_set_cursor, 0, pos)
   end,
 })
 
