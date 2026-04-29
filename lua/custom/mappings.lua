@@ -128,7 +128,7 @@ M.dap = {
     ["<leader>Q"] = { "<cmd> q! <CR>", "Force quit"},
 
     -- terminal 
-    ["<leader>t"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+    ["<leader>tt"] = { "<cmd>ToggleTerm direction=float<CR>", "Toggle Terminal" },
 
 
     -- git 
