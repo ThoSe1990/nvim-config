@@ -20,6 +20,7 @@ dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
+vim.o.shell = "/bin/zsh"
 
 -- clang-format auto formatting before document safe
 vim.api.nvim_create_autocmd("BufWritePre", {
