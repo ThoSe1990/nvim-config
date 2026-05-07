@@ -16,25 +16,96 @@ M.dap = {
   },
   n = {
 
-    -- oil / browsing files
-    ["<leader>nn"] = {
+    -- neotree + oil / browsing files
+    ["-"] = {
       function()
         require("oil").toggle_float()
       end,
       "Toggle Oil file explorer",
     },
-    ["<leader>nm"] = {
+    ["_"] = {
       function()
         vim.cmd("Oil")
       end,
       "Open Oil",
     },
-    ["<leader>nM"] = {
+
+    ["<leader>E"] = {
       function()
-        vertical_split_next_buffer()
-        vim.cmd("Oil")
+        require("neo-tree.command").execute({ toggle = true })
       end,
-      "Open Oil + Split",
+      "Toggle Neo-tree",
+    },
+
+    ["<leader>e"] = {
+      function()
+        require("neo-tree.command").execute({
+          action = "focus",
+          source = "filesystem",
+          position = "left",
+        })
+      end,
+      "Focus Neo-tree",
+    },
+
+    ["<leader>be"] = {
+      function()
+        require("neo-tree.command").execute({
+          reveal = true,
+          source = "filesystem",
+        })
+      end,
+      "Reveal current file in Neo-tree",
+    },
+
+    ["<leader>bg"] = {
+      function()
+        require("neo-tree.command").execute({
+          source = "git_status",
+          toggle = true,
+        })
+      end,
+      "Toggle Neo-tree git status",
+    },
+
+    ["<leader>bb"] = {
+      function()
+        require("neo-tree.command").execute({
+          source = "buffers",
+          toggle = true,
+        })
+      end,
+      "Toggle Neo-tree buffers",
+    },
+
+    ["<leader>fs"] = {
+      function()
+        require("neo-tree.command").execute({
+          source = "filesystem",
+          position = "float",
+          toggle = true,
+        })
+      end,
+      "Floating Neo-tree",
+    },
+
+    ["<leader>fr"] = {
+      function()
+        require("neo-tree.command").execute({
+          reveal_force_cwd = true,
+        })
+      end,
+      "Reveal file and sync cwd",
+    },
+
+    ["<leader>fc"] = {
+      function()
+        require("neo-tree.command").execute({
+          dir = vim.fn.getcwd(),
+          toggle = true,
+        })
+      end,
+      "Neo-tree at cwd",
     },
 
     -- cursor movement 

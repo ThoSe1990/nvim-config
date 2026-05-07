@@ -7,6 +7,27 @@
 
 local plugins = {  
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    cmd = "Neotree",
+    event = "VeryLazy", -- IMPORTANT
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      vim.schedule(function()
+        require("neo-tree").setup({
+          filesystem = {
+            follow_current_file = true,
+            hijack_netrw_behavior = "disabled",
+          },
+        })
+      end)
+    end,
+  },
+  {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
