@@ -153,6 +153,13 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+    opts = {
+      servers = {
+        clangd = {
+          mason = false,
+        },
+      },
+    },
   },
   {
     "williamboman/mason.nvim",
