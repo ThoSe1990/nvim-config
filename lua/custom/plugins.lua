@@ -7,6 +7,13 @@
 
 local plugins = {  
   {
+    'numToStr/Comment.nvim',
+    mappings = {
+        basic = true,
+        extra = true,
+    },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     cmd = "Neotree",
@@ -103,9 +110,6 @@ local plugins = {
   },
   {
     "tpope/vim-fugitive",
-  },
-  {
-    "terrortylor/nvim-comment"
   },
   {
     -- install ripgrep: 
