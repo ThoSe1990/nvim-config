@@ -23,12 +23,7 @@ M.dap = {
       end,
       "Toggle Oil file explorer",
     },
-    ["_"] = {
-      function()
-        vim.cmd("Oil")
-      end,
-      "Open Oil",
-    },
+    ["_"] = {"<cmd> Neotree reveal left<CR>"},
 
     -- cursor movement 
     ["L"] = { "g_", "Move cursor to the end of a line" },
