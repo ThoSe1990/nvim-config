@@ -18,7 +18,7 @@ local plugins = {
     opts = {
       window = {
         position = "left",
-        width = 30,
+        width = 70,
       },
       event_handlers = {
         {
